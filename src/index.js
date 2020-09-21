@@ -1,23 +1,23 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import Login from './Components/Login';
 import {Provider}from 'react-redux'
 import * as serviceWorker from './serviceWorker';
 import  createStore  from './Redux/store';
 import App from './App';
-import { Router } from 'react-router';
+import {ConnectedRouter} from 'connected-react-router';
+import {Frontload } from 'react-frontload'
 const {store,history} = createStore()
  
 const Application=(
     <Provider store ={store}>
-       <Router history={history}>       
-            <App/>
-    </Router>
+       <ConnectedRouter history={history}>    
+            <Frontload noServerRender={true}>
+                <App/>
+            </Frontload>
+        </ConnectedRouter>
     </Provider>
-
 )
-ReactDOM.hydrate(Application,document.getElementById('root'));
+ReactDOM.render(Application,document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.

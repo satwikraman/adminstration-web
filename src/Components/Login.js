@@ -1,19 +1,31 @@
 import React,{Component} from 'react';
 import '../Styles.css'
+import Header from './Common/Header';
 class Login extends Component{
     state={}
 
     render(){
         return(
-            <div className="contianer login-home">
-                <form className="form">
-                    <div className='form-group col-7 center home'>                   
-                    <input type="text" className='form-control' placeholder='UserName'/><br/>
-                    <input type="password" className='form-control' placeholder="password" /><br/>
-                    <button type="submit" className='btn btn-primary'>Sign In</button>
+            <div>
+                <Header/>
+                <section className="non-home-banner-area">
+                    <div className="container">
+                        <div className="home-banner-content">
+                            <div className="row justify-content-center">
+                                <div className="col-lg-4">
+                                    <h1 className="text-center">Login</h1>
+                                    <form>                 
+                                        <input type="text" placeholder='UserName'/>
+                                        <input type="password"   placeholder="password" />
+                                        <div className= "d-flex align-items-center justify-content-between">
+                                            <button type="submit" className='genric-btn info my-4'>Sign In</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
                     </div>
- 
-                </form>
+                </section>
             </div>
         )
     }
